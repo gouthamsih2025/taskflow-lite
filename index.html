@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TaskFlow Lite - A sleek, modern task manager with a gold and black theme built with vanilla HTML, CSS, and JS.">
+  <meta name="author" content="R. Goutham">
+  
+  <title>TaskFlow Lite | Sleek Task Manager</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+  
+  <!-- Main Stylesheet & Utilities -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/utilities.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <div class="container">
+        <div class="header-badge">
+          <span class="header-dot"></span> TaskFlow Lite
+        </div>
+        <h1 class="app-title">Streamline Your <span>Daily Flow</span></h1>
+        <p class="app-tagline">A premium workspace to organize, track, and complete your objectives.</p>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="app-main">
+      <div class="container">
+        
+        <!-- Stats Section -->
+        <section class="stats-bar" aria-label="Task Statistics">
+          <div class="stat-card">
+            <div class="stat-number" id="stat-total">0</div>
+            <div class="stat-label">Total Objectives</div>
+          </div>
+          <div class="stat-card completed">
+            <div class="stat-number" id="stat-completed">0</div>
+            <div class="stat-label">Completed</div>
+          </div>
+          <div class="stat-card remaining">
+            <div class="stat-number" id="stat-remaining">0</div>
+            <div class="stat-label">Remaining</div>
+          </div>
+        </section>
+
+        <!-- Task Input Section (Form) -->
+        <section class="input-section" aria-label="Add New Task">
+          <form id="task-form">
+            <div class="input-wrap">
+              <input 
+                type="text" 
+                id="task-input" 
+                placeholder="What is your next objective? (e.g. Build API endpoints...)"
+                maxlength="100"
+                aria-label="New task content"
+                required
+              >
+              <button type="submit" id="add-btn" aria-label="Add objective">
+                <span>✦</span> Add Task
+              </button>
+            </div>
+          </form>
+          <div class="error-msg" id="error-msg" role="alert" aria-live="polite"></div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filters-section" aria-label="Filter Objectives">
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all" aria-label="Show all tasks">
+              All <span class="filter-count" id="count-all">0</span>
+            </button>
+            <button class="filter-btn" data-filter="active" aria-label="Show active tasks">
+              Active <span class="filter-count" id="count-active">0</span>
+            </button>
+            <button class="filter-btn" data-filter="completed" aria-label="Show completed tasks">
+              Completed <span class="filter-count" id="count-completed">0</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Tasks list -->
+        <section class="task-list-wrap" aria-label="Task List">
+          <ul id="task-list">
+            <!-- Tasks will be dynamically injected here by Javascript render engine -->
+          </ul>
+        </section>
+
+        <!-- Bulk Actions Section -->
+        <section class="bulk-actions" aria-label="Bulk Actions">
+          <span class="bulk-info" id="bulk-info">0 tasks total</span>
+          <button class="clear-btn" id="clear-done-btn" disabled>
+            Clear Completed
+          </button>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="container">
+        <p>TaskFlow Lite · Crafted by <span>R. Goutham</span> for SoftNexis Task 2</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- App Entry Point (loaded as ES6 module) -->
+  <script type="module" src="app.js" defer></script>
+</body>
+</html>
