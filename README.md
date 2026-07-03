@@ -20,12 +20,16 @@ A sleek, premium, and fully responsive Task Manager web application built with *
 
 ```
 taskflow-lite/
-├── index.html        # Clean, accessible HTML5 structure
+├── index.html              # Main application interface
+├── app.js                  # Application entry point (ES6 Module coordinator)
+├── README.md               # Project documentation
 ├── styles/
-│   └── main.css      # Core styles, animations, design system tokens
-├── js/
-│   └── main.js       # App logic (storage, state, validation, DOM rendering)
-└── README.md         # Documentation
+│   ├── main.css            # Core styling (Black & Gold theme)
+│   └── utilities.css       # Helper utility classes
+└── modules/
+    ├── storage.js          # localStorage abstraction layer
+    ├── render.js           # DOM rendering functions
+    └── validation.js       # Form validation logic
 ```
 
 ---
@@ -33,7 +37,7 @@ taskflow-lite/
 ## 🛠️ Technology Stack & Details
 - **Markup**: Semantic HTML5 with proper ARIA attributes to support accessibility tools.
 - **Styling**: Vanilla CSS3 using custom properties (design variables), Flexbox, and CSS Grid for layouts. Smooth micro-animations enhance user interaction.
-- **Interactions**: Vanilla JS (ES6) implementing clean DOM manipulation, event delegation, and browser API integration.
+- **Interactions**: Modular Vanilla JS (ES6 Modules) using clean separation of concerns, DOM manipulation, event delegation, and browser API integration.
 
 ---
 
